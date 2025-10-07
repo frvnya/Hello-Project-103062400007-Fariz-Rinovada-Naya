@@ -13,7 +13,9 @@ const katalog = {
   { nama: "Laksa Betawi", harga: 25000, gambar: "Makanan/laksa.jpg", deskripsi: "Mie dan ketupat disajikan dengan kuah santan kental berbumbu kemiri khas Betawi." },
   { nama: "Lontong Sayur Betawi", harga: 27000, gambar: "Makanan/lonsay.jpg", deskripsi: "Lontong dengan kuah santan dan sayuran khas." },
   { nama: "Asinan Betawi", harga: 20000, gambar: "Makanan/asinan.jpg", deskripsi: "Sayur segar disiram kuah kacang asam manis." },
-  { nama: "Gado-Gado Betawi", harga: 25000, gambar: "Makanan/gado.jpg", deskripsi: "Sayuran rebus dengan bumbu kacang kental." }
+  { nama: "Gado-Gado Betawi", harga: 25000, gambar: "Makanan/gado.jpg", deskripsi: "Sayuran rebus dengan bumbu kacang kental." },
+  { nama: "PECEL LELE", harga: 25000, gambar: "Makanan/gado.jpg", deskripsi: "Sayuran rebus dengan bumbu kacang kental." }
+
 ],
   camilan: [
     { nama: "Kerak Telor", harga: 20000, gambar: "Camilan/Kerak Telor.jpg", deskripsi: "Telur bebek, ketan, dan serundeng gurih." },
