@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AbangNoneFood - Marketplace Makanan Betawi</title>
+  <link rel="stylesheet" href="AbangNoneFood.css">
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <h1>AbangNoneFood</h1>
+    <p>Makanan, camilan, dan minuman khas Betawi - Kirim khusus Jakarta</p>
+  </div>
+  <div class="header-info">
+    <div id="user-nama"></div>
+    <div id="alamat-info"></div>
+  </div>
+</header>
+
+
+<div class="page-container">
+  <aside class="sidebar">
+    <h2>Menu</h2>
+    <nav>
+      <button onclick="showCategory('makanan')">Makanan Berat</button>
+      <button onclick="showCategory('camilan')">Camilan</button>
+      <button onclick="showCategory('minuman')">Minuman</button>
+    </nav>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Cari makanan..." oninput="cariProduk()">
+    </div>
+  </aside>
+
+  <div class="content">
+    <main>
+      <section id="katalog"></section>
+
+      <section id="keranjang" style="display:none;">
+        <h2>Keranjang Belanja</h2>
+        <ul id="daftar-keranjang"></ul>
+        <div class="keranjang-footer">
+          <p>Total: <span id="total-harga">Rp 0</span></p>
+          <button onclick="checkout()">Bayar dengan QRIS</button>
+        </div>
+      </section>
+
+      <section id="status-pesanan" style="display:none;">
+        <h2>Status Pesanan</h2>
+        <div class="status-container">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="status-timeline">
+            <div class="status-item" id="status-pesan">
+              <div class="status-icon">✅</div>
+              <div class="status-text">
+                <h4>Pesanan Diterima</h4>
+                <p>Pesanan Anda telah dikonfirmasi</p>
+              </div>
+            </div>
+            <div class="status-item" id="status-masak">
+              <div class="status-icon">👨‍🍳</div>
+              <div class="status-text">
+                <h4>Sedang Dimasak</h4>
+                <p>Chef sedang menyiapkan pesanan Anda</p>
+              </div>
+            </div>
+            <div class="status-item" id="status-siap">
+              <div class="status-icon">📦</div>
+              <div class="status-text">
+                <h4>Siap Dikirim</h4>
+                <p>Pesanan sudah siap dan akan segera dikirim</p>
+              </div>
+            </div>
+            <div class="status-item" id="status-kirim">
+              <div class="status-icon">🏍️</div>
+              <div class="status-text">
+                <h4>Dalam Perjalanan</h4>
+                <p>Kurir sedang menuju alamat Anda</p>
+              </div>
+            </div>
+            <div class="status-item" id="status-selesai">
+              <div class="status-icon">🎉</div>
+              <div class="status-text">
+                <h4>Pesanan Selesai</h4>
+                <p>Pesanan telah sampai di tujuan</p>
+              </div>
+            </div>
+          </div>
+          <div class="estimated-time">
+            <p>⏰ Estimasi waktu tiba: <span id="waktu-estimasi">45-60 menit</span></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <section id="testimoni">
+      <h2>Testimoni Pelanggan</h2>
+      <div class="testimoni-container">
+        <div class="testimoni">
+          <span class="ikon-kutipan">“</span>
+          <p>"Sop Betawi-nya enak banget, bener-bener nostalgia rasa rumah!"</p>
+          <strong>- Rina, Jakarta Selatan</strong>
+        </div>
+        <div class="testimoni">
+          <span class="ikon-kutipan">“</span>
+          <p>"Minum Bir Pletok sambil santai sore, mantap banget!"</p>
+          <strong>- Budi, Jakarta Timur</strong>
+        </div>
+        <div class="testimoni">
+          <span class="ikon-kutipan">“</span>
+          <p>"Kue cucurnya lembut dan manisnya pas. Bikin nagih!"</p>
+          <strong>- Lilis, Jakarta Barat</strong>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div id="modal-qris" style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 999;">
+  <div class="modal-content"> <h3>Bayar dengan QRIS</h3>
+    <img src="qrisnih.jpg" alt="QRIS" class="qris-image"> <div class="payment-details"> <p><strong>Wilayah:</strong> <span id="wilayah-modal">Jakarta</span></p>
+      <p>Subtotal: <span id="subtotal-modal">Rp 0</span></p>
+      <p>Ongkir: <span id="ongkir-modal">Rp 0</span></p>
+      <hr>
+      <p><strong>Total Belanja: <span id="total-modal" class="total-amount">Rp 0</span></strong></p> </div>
+
+    <div class="modal-buttons"> <button onclick="konfirmasiBayar()" class="btn-bayar">Bayar</button>
+      <button onclick="tutupModal()" class="btn-batal">Batal</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <p>© 2025 AbangNoneFood - Makanan Khas Betawi, Kirim se-Jakarta.</p>
+    <p>Temukan Cita Rasa Asli Betawi di Setiap Hidangan.</p>
+  </div>
+</footer>
+
+<script src="AbangNoneFood.js"></script>
+</body>
+</html>

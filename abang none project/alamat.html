@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Alamat Pengiriman</title>
+  <link rel="stylesheet" href="alamat.css">
+
+  <style>
+    body {
+      --custom-background: url('kota.jpg');
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Alamat Pengiriman Anda</h2>
+
+    <label for="provinsi">Pilih Wilayah:</label>
+    <select id="provinsi">
+      <option value="">-- Pilih Wilayah --</option>
+      <option value="jakarta">DKI Jakarta</option>
+    </select>
+
+    <div id="kota-section" style="display:none;">
+      <label>Pilih Kota:</label>
+      <div class="city-options" id="city-options">
+        <div class="city-card" data-value="Jakarta Selatan">
+          <img src="selatan.jpg" alt="">
+          <span>Jakarta Selatan</span>
+        </div>
+        <div class="city-card" data-value="Jakarta Timur">
+          <img src="timur.jpg" alt="">
+          <span>Jakarta Timur</span>
+        </div>
+        <div class="city-card" data-value="Jakarta Barat">
+          <img src="barat.jpg" alt="">
+          <span>Jakarta Barat</span>
+        </div>
+        <div class="city-card" data-value="Jakarta Utara">
+          <img src="utara.jpg" alt="">
+          <span>Jakarta Utara</span>
+        </div>
+        <div class="city-card" data-value="Jakarta Pusat">
+          <img src="pusat.jpg" alt="">
+          <span>Jakarta Pusat</span>
+        </div>
+      </div>
+    </div>
+
+    <input type="hidden" id="wilayah-value">
+
+    <label for="alamat">Alamat Rumah:</label>
+    <input type="text" id="alamat" placeholder="Contoh: Jl. Karet No. 21, RT 03 RW 06">
+
+    <button onclick="simpanAlamat()">Lanjut ke Toko</button>
+  </div>
+
+  <script src="alamat.js"></script>
+</body>
+</html>
